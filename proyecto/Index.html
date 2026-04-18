@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitud de alta de servicio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+
+      <header class="hero">
+        <div class="hero-badge">Formulario de solicitud</div>
+        <div class="hero-line"></div>
+        <h1>Solicitud de alta de servicio</h1>
+        <p>
+          Completá tus datos para iniciar la solicitud. El diseño fue pensado de forma genérica
+          para adaptarse a distintos tipos de servicios, manteniendo claridad, orden y buena experiencia de uso.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="form-panel">
+          <form id="serviceForm" novalidate>
+
+            <section class="section-card">
+              <div class="section-header">
+                <div class="section-icon">👤</div>
+                <div>
+                  <h2>Datos personales</h2>
+                  <p>Información básica del solicitante.</p>
+                </div>
+              </div>
+
+              <div class="form-grid two-columns">
+                <div class="field">
+                  <label for="nombre">Nombre <span>*</span></label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Ej.: Alexis" />
+                  <p class="error-message" id="nombreError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="apellido">Apellido <span>*</span></label>
+                  <input type="text" id="apellido" name="apellido" placeholder="Ej.: Molina" />
+                  <p class="error-message" id="apellidoError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="dni">DNI <span>*</span></label>
+                  <input type="text" id="dni" name="dni" placeholder="Ej.: 40123456" />
+                  <p class="error-message" id="dniError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="fechaNacimiento">Fecha de nacimiento <span>*</span></label>
+                  <input type="date" id="fechaNacimiento" name="fechaNacimiento" />
+                  <p class="error-message" id="fechaNacimientoError"></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card">
+              <div class="section-header">
+                <div class="section-icon">📞</div>
+                <div>
+                  <h2>Datos de contacto</h2>
+                  <p>Canales para comunicarnos con el solicitante.</p>
+                </div>
+              </div>
+
+              <div class="form-grid two-columns">
+                <div class="field">
+                  <label for="email">Correo electrónico <span>*</span></label>
+                  <input type="email" id="email" name="email" placeholder="Ej.: nombre@correo.com" />
+                  <p class="error-message" id="emailError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="telefono">Teléfono <span>*</span></label>
+                  <input type="text" id="telefono" name="telefono" placeholder="Ej.: 11 5555 5555" />
+                  <p class="error-message" id="telefonoError"></p>
+                </div>
+
+                <div class="field full-width">
+                  <label for="medioContacto">Medio de contacto preferido <span>*</span></label>
+                  <select id="medioContacto" name="medioContacto">
+                    <option value="">Seleccioná una opción</option>
+                    <option value="email">Correo electrónico</option>
+                    <option value="telefono">Teléfono</option>
+                    <option value="whatsapp">WhatsApp</option>
+                  </select>
+                  <p class="error-message" id="medioContactoError"></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card">
+              <div class="section-header">
+                <div class="section-icon">📍</div>
+                <div>
+                  <h2>Dirección</h2>
+                  <p>Domicilio asociado a la solicitud del servicio.</p>
+                </div>
+              </div>
+
+              <div class="form-grid two-columns">
+                <div class="field full-width">
+                  <label for="calle">Calle <span>*</span></label>
+                  <input type="text" id="calle" name="calle" placeholder="Ej.: Avenida Siempre Viva" />
+                  <p class="error-message" id="calleError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="numero">Número <span>*</span></label>
+                  <input type="text" id="numero" name="numero" placeholder="Ej.: 742" />
+                  <p class="error-message" id="numeroError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="piso">Piso</label>
+                  <input type="text" id="piso" name="piso" placeholder="Opcional" />
+                  <p class="error-message" id="pisoError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="departamento">Departamento</label>
+                  <input type="text" id="departamento" name="departamento" placeholder="Opcional" />
+                  <p class="error-message" id="departamentoError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="ciudad">Ciudad <span>*</span></label>
+                  <input type="text" id="ciudad" name="ciudad" placeholder="Ej.: Zárate" />
+                  <p class="error-message" id="ciudadError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="provincia">Provincia <span>*</span></label>
+                  <input type="text" id="provincia" name="provincia" placeholder="Ej.: Buenos Aires" />
+                  <p class="error-message" id="provinciaError"></p>
+                </div>
+
+                <div class="field full-width">
+                  <label for="codigoPostal">Código postal <span>*</span></label>
+                  <input type="text" id="codigoPostal" name="codigoPostal" placeholder="Ej.: 2800" />
+                  <p class="error-message" id="codigoPostalError"></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card">
+              <div class="section-header">
+                <div class="section-icon">📝</div>
+                <div>
+                  <h2>Solicitud</h2>
+                  <p>Datos generales del servicio que desea solicitar.</p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="tipoServicio">Tipo de servicio <span>*</span></label>
+                  <select id="tipoServicio" name="tipoServicio">
+                    <option value="">Seleccioná un servicio</option>
+                    <option value="basico">Servicio básico</option>
+                    <option value="estandar">Servicio estándar</option>
+                    <option value="premium">Servicio premium</option>
+                  </select>
+                  <p class="error-message" id="tipoServicioError"></p>
+                </div>
+
+                <div class="field">
+                  <label for="comentarios">Comentarios adicionales</label>
+                  <textarea id="comentarios" name="comentarios" placeholder="Podés agregar información complementaria."></textarea>
+                  <p class="error-message" id="comentariosError"></p>
+                </div>
+
+                <div class="checkbox-field">
+                  <input type="checkbox" id="terminos" name="terminos" />
+                  <label for="terminos">Acepto los términos y condiciones <span>*</span></label>
+                </div>
+                <p class="error-message" id="terminosError"></p>
+              </div>
+            </section>
+
+            <div class="button-row">
+              <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+              <button type="button" class="btn btn-secondary" id="resetBtn">Limpiar formulario</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="side-panel">
+          <section class="summary-card">
+            <div class="summary-top">
+              <div class="summary-dot"></div>
+              <div>
+                <h3>Resumen</h3>
+                <p class="summary-subtitle">Vista rápida de la solicitud.</p>
+              </div>
+            </div>
+
+            <div class="summary-item">
+              <span>Solicitante</span>
+              <strong id="summaryNombreCompleto">Sin completar</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Correo electrónico</span>
+              <strong id="summaryEmail">Sin completar</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Teléfono</span>
+              <strong id="summaryTelefono">Sin completar</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Ciudad</span>
+              <strong id="summaryCiudad">Sin completar</strong>
+            </div>
+
+            <div class="summary-item">
+              <span>Servicio solicitado</span>
+              <strong id="summaryServicio">Sin seleccionar</strong>
+            </div>
+          </section>
+
+          <section class="alert success hidden" id="successAlert">
+            <strong>Solicitud enviada correctamente</strong>
+            <p>Los datos fueron validados y la solicitud quedó lista para ser procesada.</p>
+          </section>
+
+          <section class="alert warning hidden" id="warningAlert">
+            <strong>Hay campos para revisar</strong>
+            <p>Verificá los datos resaltados antes de enviar el formulario.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

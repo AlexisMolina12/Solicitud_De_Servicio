@@ -150,6 +150,13 @@ body {
   display: block;
 }
 
+.section-icon-frame2 img {
+  width: 53px;
+  height: 53px;
+  object-fit: contain;
+  display: block;
+}
+
 .section-header h2 {
   margin: 0 0 4px;
   font-size: 22px;

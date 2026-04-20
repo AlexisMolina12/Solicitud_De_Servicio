@@ -117,7 +117,7 @@ body {
   margin-bottom: 22px;
 }
 
-.section-icon {
+.section-frame {
   width: 52px;
   height: 52px;
   border-radius: 16px;
@@ -129,6 +129,25 @@ body {
   font-size: 22px;
   box-shadow: 0 12px 24px rgba(98, 54, 21, 0.18);
   flex-shrink: 0;
+}
+
+.section-icon-frame {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #8f5b28, #623615);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.section-icon-frame img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
 }
 
 .section-header h2 {

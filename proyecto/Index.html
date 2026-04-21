@@ -63,7 +63,7 @@
             <section class="section-card">
               <div class="section-header">
                 <div class="section-icon-frame">
-                    <img src="./Imagenes/telefono.png" class="section-image">
+                  <img src="./Imagenes/telefono.png" alt="Teléfono" class="section-image">
                 </div>
                 <div>
                   <h2>Datos de contacto</h2>
@@ -99,11 +99,13 @@
 
             <section class="section-card">
               <div class="section-header">
-               <div class="section-icon-frame2">
-                    <img src="./Imagenes/ubicacion.png" class="section-image2">
+                <div class="section-icon-frame2">
+                  <img src="./Imagenes/ubicacion.png" alt="Ubicación" class="section-image2">
                 </div>
+                <div>
                   <h2>Dirección</h2>
                   <p>Domicilio asociado a la solicitud del servicio.</p>
+                </div>
               </div>
 
               <div class="form-grid two-columns">
@@ -228,18 +230,27 @@
               <strong id="summaryServicio">Sin seleccionar</strong>
             </div>
           </section>
-
-          <section class="alert success hidden" id="successAlert">
-            <strong>Solicitud enviada correctamente</strong>
-            <p>Los datos fueron validados y la solicitud quedó lista para ser procesada.</p>
-          </section>
-
-          <section class="alert warning hidden" id="warningAlert">
-            <strong>Hay campos para revisar</strong>
-            <p>Verificá los datos resaltados antes de enviar el formulario.</p>
-          </section>
         </aside>
       </main>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="successModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Solicitud registrada correctamente</h3>
+        <button type="button" class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+
+      <p class="modal-text">
+        Se guardó la siguiente información:
+      </p>
+
+      <div class="modal-content" id="modalContent"></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="acceptModalBtn">Aceptar</button>
+      </div>
     </div>
   </div>
 

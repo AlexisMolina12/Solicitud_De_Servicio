@@ -19,14 +19,16 @@ const tipoServicio = document.getElementById("tipoServicio");
 const comentarios = document.getElementById("comentarios");
 const terminos = document.getElementById("terminos");
 
-const successAlert = document.getElementById("successAlert");
-const warningAlert = document.getElementById("warningAlert");
-
 const summaryNombreCompleto = document.getElementById("summaryNombreCompleto");
 const summaryEmail = document.getElementById("summaryEmail");
 const summaryTelefono = document.getElementById("summaryTelefono");
 const summaryCiudad = document.getElementById("summaryCiudad");
 const summaryServicio = document.getElementById("summaryServicio");
+
+const successModal = document.getElementById("successModal");
+const modalContent = document.getElementById("modalContent");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const acceptModalBtn = document.getElementById("acceptModalBtn");
 
 const errorFields = {
   nombre: document.getElementById("nombreError"),
@@ -67,6 +69,8 @@ function clearErrors() {
   ].forEach((field) => {
     field.classList.remove("input-error");
   });
+
+  terminos.classList.remove("checkbox-error");
 }
 
 function setError(field, message) {
@@ -181,10 +185,80 @@ function validateForm() {
 
   if (!terminos.checked) {
     errorFields.terminos.textContent = "Debés aceptar los términos y condiciones.";
+    terminos.classList.add("checkbox-error");
     isValid = false;
   }
 
   return isValid;
+}
+
+function openSuccessModal() {
+  modalContent.innerHTML = `
+    <div class="modal-item">
+      <span>Nombre completo</span>
+      <strong>${nombre.value.trim()} ${apellido.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>DNI</span>
+      <strong>${dni.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Fecha de nacimiento</span>
+      <strong>${fechaNacimiento.value}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Correo electrónico</span>
+      <strong>${email.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Teléfono</span>
+      <strong>${telefono.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Medio de contacto preferido</span>
+      <strong>${medioContacto.options[medioContacto.selectedIndex].text}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Dirección</span>
+      <strong>
+        ${calle.value.trim()} ${numero.value.trim()}
+        ${piso.value.trim() ? `, Piso ${piso.value.trim()}` : ""}
+        ${departamento.value.trim() ? `, Depto ${departamento.value.trim()}` : ""}
+      </strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Ciudad / Provincia</span>
+      <strong>${ciudad.value.trim()} - ${provincia.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Código postal</span>
+      <strong>${codigoPostal.value.trim()}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Tipo de servicio</span>
+      <strong>${tipoServicio.options[tipoServicio.selectedIndex].text}</strong>
+    </div>
+
+    <div class="modal-item">
+      <span>Comentarios adicionales</span>
+      <strong>${comentarios.value.trim() || "Sin comentarios"}</strong>
+    </div>
+  `;
+
+  successModal.classList.remove("hidden");
+}
+
+function closeSuccessModal() {
+  successModal.classList.add("hidden");
 }
 
 form.addEventListener("submit", function (e) {
@@ -194,19 +268,16 @@ form.addEventListener("submit", function (e) {
   const valid = validateForm();
 
   if (valid) {
-    successAlert.classList.remove("hidden");
-    warningAlert.classList.add("hidden");
+    openSuccessModal();
   } else {
-    warningAlert.classList.remove("hidden");
-    successAlert.classList.add("hidden");
+    closeSuccessModal();
   }
 });
 
 resetBtn.addEventListener("click", function () {
   form.reset();
   clearErrors();
-  successAlert.classList.add("hidden");
-  warningAlert.classList.add("hidden");
+  closeSuccessModal();
   updateSummary();
 });
 
@@ -230,6 +301,15 @@ resetBtn.addEventListener("click", function () {
 ].forEach((field) => {
   field.addEventListener("input", updateSummary);
   field.addEventListener("change", updateSummary);
+});
+
+closeModalBtn.addEventListener("click", closeSuccessModal);
+acceptModalBtn.addEventListener("click", closeSuccessModal);
+
+successModal.addEventListener("click", function (e) {
+  if (e.target === successModal) {
+    closeSuccessModal();
+  }
 });
 
 updateSummary();

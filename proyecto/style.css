@@ -523,3 +523,47 @@ textarea.input-error {
     width: 100%;
   }
 }
+
+.modal-success-box {
+  max-width: 520px;
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.modal-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.modal-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #8f5b28, #623615);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(98, 54, 21, 0.18);
+}
+
+.modal-success-title {
+  margin: 0 0 12px;
+  color: var(--primary-dark);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.modal-success-text {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.modal-actions-center {
+  justify-content: center;
+}

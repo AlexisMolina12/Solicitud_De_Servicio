@@ -26,8 +26,6 @@ const summaryCiudad = document.getElementById("summaryCiudad");
 const summaryServicio = document.getElementById("summaryServicio");
 
 const successModal = document.getElementById("successModal");
-const modalContent = document.getElementById("modalContent");
-const closeModalBtn = document.getElementById("closeModalBtn");
 const acceptModalBtn = document.getElementById("acceptModalBtn");
 
 const errorFields = {
@@ -193,67 +191,6 @@ function validateForm() {
 }
 
 function openSuccessModal() {
-  modalContent.innerHTML = `
-    <div class="modal-item">
-      <span>Nombre completo</span>
-      <strong>${nombre.value.trim()} ${apellido.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>DNI</span>
-      <strong>${dni.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Fecha de nacimiento</span>
-      <strong>${fechaNacimiento.value}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Correo electrónico</span>
-      <strong>${email.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Teléfono</span>
-      <strong>${telefono.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Medio de contacto preferido</span>
-      <strong>${medioContacto.options[medioContacto.selectedIndex].text}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Dirección</span>
-      <strong>
-        ${calle.value.trim()} ${numero.value.trim()}
-        ${piso.value.trim() ? `, Piso ${piso.value.trim()}` : ""}
-        ${departamento.value.trim() ? `, Depto ${departamento.value.trim()}` : ""}
-      </strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Ciudad / Provincia</span>
-      <strong>${ciudad.value.trim()} - ${provincia.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Código postal</span>
-      <strong>${codigoPostal.value.trim()}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Tipo de servicio</span>
-      <strong>${tipoServicio.options[tipoServicio.selectedIndex].text}</strong>
-    </div>
-
-    <div class="modal-item">
-      <span>Comentarios adicionales</span>
-      <strong>${comentarios.value.trim() || "Sin comentarios"}</strong>
-    </div>
-  `;
-
   successModal.classList.remove("hidden");
 }
 
